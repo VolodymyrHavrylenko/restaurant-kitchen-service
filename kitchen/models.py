@@ -32,6 +32,20 @@ class DishType(models.Model):
         return self.name
 
 
+class Ingredient(models.Model):
+    name = models.CharField(
+        max_length=100,
+        unique=True,
+    )
+    class Meta:
+        verbose_name = "Ingredient"
+        verbose_name_plural = "Ingredients"
+        ordering = ["name"]
+
+    def __str__(self):
+        return self.name
+
+
 class Dish(models.Model):
     name = models.CharField(
         max_length=100,
@@ -56,6 +70,11 @@ class Dish(models.Model):
     cook = models.ManyToManyField(
         Cook,
         help_text="Cooks responsible for the dish",
+        related_name="dishes",
+    )
+    ingredients = models.ManyToManyField(
+        Ingredient,
+        help_text="Ingredients used in this dish",
         related_name="dishes",
     )
     class Meta:
