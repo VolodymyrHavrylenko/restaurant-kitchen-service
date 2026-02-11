@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
@@ -69,7 +70,7 @@ class Dish(models.Model):
         related_name="dishes",
     )
     cook = models.ManyToManyField(
-        Cook,
+        settings.AUTH_USER_MODEL,
         help_text="Cooks responsible for the dish",
         related_name="dishes",
     )
