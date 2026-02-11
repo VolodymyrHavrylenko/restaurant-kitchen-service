@@ -30,3 +30,40 @@ class DishType(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Dish(models.Model):
+    name = models.CharField(
+        max_length=100,
+        unique=True,
+        help_text="Name of the dish",
+    )
+    description = models.TextField(
+        blank=True,
+        null=True,
+        help_text="Description of the dish",
+    )
+    price = models.PositiveIntegerField(
+        default=0,
+        help_text="Price of the dish",
+    )
+    dish_type = models.ForeignKey(
+        DishType,
+        on_delete=models.PROTECT,
+        help_text="Type of dish",
+        related_name="dishes",
+    )
+    cook = models.ManyToManyField(
+        Cook,
+        help_text="Cooks responsible for the dish",
+        related_name="dishes",
+    )
+    class Meta:
+        verbose_name = "Dish"
+        verbose_name_plural = "Dishes"
+        ordering = ["name"]
+
+    def __str__(self):
+        if self.description:
+            return f"{self.name} - {self.description}"
+        return self.name
