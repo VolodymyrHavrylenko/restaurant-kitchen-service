@@ -37,6 +37,7 @@ class Ingredient(models.Model):
         max_length=100,
         unique=True,
     )
+
     class Meta:
         verbose_name = "Ingredient"
         verbose_name_plural = "Ingredients"
@@ -77,6 +78,7 @@ class Dish(models.Model):
         help_text="Ingredients used in this dish",
         related_name="dishes",
     )
+
     class Meta:
         verbose_name = "Dish"
         verbose_name_plural = "Dishes"
