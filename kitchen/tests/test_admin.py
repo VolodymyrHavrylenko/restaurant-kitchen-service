@@ -2,6 +2,9 @@ from django.contrib.auth import get_user_model
 from django.test import TestCase, Client
 from django.urls import reverse
 
+from kitchen.models import Dish, Ingredient, DishType
+
+
 class CookAdminSiteTests(TestCase):
     def setUp(self):
         self.admin_user = get_user_model().objects.create_superuser(
@@ -48,3 +51,40 @@ class CookAdminSiteTests(TestCase):
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "year_of_experience")
+
+class DishAdminSiteTests(TestCase):
+    def setUp(self):
+        self.admin_user = get_user_model().objects.create_superuser(
+            username="admin",
+            password="testadmin",
+        )
+        self.client.force_login(self.admin_user)
+        self.dish_type = DishType.objects.create(
+            name="Test Type",
+        )
+        self.ingredient = Ingredient.objects.create(
+            name="Test Ingredient",
+        )
+        self.dish = Dish.objects.create(
+            name="Test Dish",
+            dish_type=self.dish_type,
+            description="Test description",
+            price=5.0,
+        )
+        self.dish.ingredient.add(self.ingredient)
+        self.dish.cook.add(self.admin_user)
+
+    def test_dish_name_dish_type_price_description_listed(self):
+        """
+        Test that dish name, description, price,
+        and dish type are displayed in admin changelist.
+        """
+        url = reverse(
+            "admin:kitchen_dish_changelist",
+        )
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, self.dish.name)
+        self.assertContains(response, self.dish.description)
+        self.assertContains(response, str(self.dish.price))
+        self.assertContains(response, str(self.dish.dish_type))
