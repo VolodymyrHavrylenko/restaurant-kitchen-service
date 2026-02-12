@@ -74,7 +74,7 @@ class Dish(models.Model):
         help_text="Cooks responsible for the dish",
         related_name="dishes",
     )
-    ingredients = models.ManyToManyField(
+    ingredient = models.ManyToManyField(
         Ingredient,
         help_text="Ingredients used in this dish",
         related_name="dishes",
