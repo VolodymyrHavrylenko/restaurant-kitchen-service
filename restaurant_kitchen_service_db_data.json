@@ -1,0 +1,1371 @@
+[
+  {
+    "model": "kitchen.cook",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$example$examplehashedpasswordstring",
+      "last_login": null,
+      "is_superuser": true,
+      "username": "neo",
+      "first_name": "Thomas",
+      "last_name": "Anderson",
+      "email": "neo@matrix.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2026-02-12T00:00:00Z",
+      "year_of_experience": 15,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "kitchen.cook",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$dummy$hash",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "gordon",
+      "first_name": "Gordon",
+      "last_name": "Ramsay",
+      "email": "gordon@example.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2025-01-01T00:00:00Z",
+      "year_of_experience": 20,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "kitchen.cook",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$dummy$hash",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "jamie",
+      "first_name": "Jamie",
+      "last_name": "Oliver",
+      "email": "jamie@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-01-01T00:00:00Z",
+      "year_of_experience": 15,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "kitchen.cook",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$dummy$hash",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "anna",
+      "first_name": "Anna",
+      "last_name": "Petrova",
+      "email": "anna@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-01-01T00:00:00Z",
+      "year_of_experience": 10,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "kitchen.cook",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$dummy$hash",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "marco",
+      "first_name": "Marco",
+      "last_name": "Rossi",
+      "email": "marco@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-01-01T00:00:00Z",
+      "year_of_experience": 12,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "kitchen.cook",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$dummy$hash",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "sophia",
+      "first_name": "Sophia",
+      "last_name": "Lopez",
+      "email": "sophia@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-01-01T00:00:00Z",
+      "year_of_experience": 7,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "kitchen.cook",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$dummy$hash",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "li",
+      "first_name": "Li",
+      "last_name": "Wei",
+      "email": "li@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-01-01T00:00:00Z",
+      "year_of_experience": 9,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "kitchen.dishtype",
+    "pk": 1,
+    "fields": {
+      "name": "Starter"
+    }
+  },
+  {
+    "model": "kitchen.dishtype",
+    "pk": 2,
+    "fields": {
+      "name": "Soup"
+    }
+  },
+  {
+    "model": "kitchen.dishtype",
+    "pk": 3,
+    "fields": {
+      "name": "Main Course"
+    }
+  },
+  {
+    "model": "kitchen.dishtype",
+    "pk": 4,
+    "fields": {
+      "name": "Dessert"
+    }
+  },
+  {
+    "model": "kitchen.dishtype",
+    "pk": 5,
+    "fields": {
+      "name": "Drink"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 1,
+    "fields": {
+      "name": "Tomato"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 2,
+    "fields": {
+      "name": "Cheese"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 3,
+    "fields": {
+      "name": "Chicken"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 4,
+    "fields": {
+      "name": "Beef"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 5,
+    "fields": {
+      "name": "Flour"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 6,
+    "fields": {
+      "name": "Sugar"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 7,
+    "fields": {
+      "name": "Eggs"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 8,
+    "fields": {
+      "name": "Milk"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 9,
+    "fields": {
+      "name": "Butter"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 10,
+    "fields": {
+      "name": "Garlic"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 11,
+    "fields": {
+      "name": "Onion"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 12,
+    "fields": {
+      "name": "Basil"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 13,
+    "fields": {
+      "name": "Rice"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 14,
+    "fields": {
+      "name": "Salmon"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 15,
+    "fields": {
+      "name": "Shrimp"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 16,
+    "fields": {
+      "name": "Mushroom"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 17,
+    "fields": {
+      "name": "Potato"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 18,
+    "fields": {
+      "name": "Cream"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 19,
+    "fields": {
+      "name": "Chocolate"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 20,
+    "fields": {
+      "name": "Coffee"
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 1,
+    "fields": {
+      "name": "Bruschetta",
+      "description": "Grilled bread with tomato and basil",
+      "price": 9,
+      "dish_type": 1,
+      "cook": [
+        2,
+        4
+      ],
+      "ingredients": [
+        1,
+        12
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 2,
+    "fields": {
+      "name": "Caesar Salad",
+      "description": "Chicken salad with parmesan",
+      "price": 14,
+      "dish_type": 1,
+      "cook": [
+        1,
+        5
+      ],
+      "ingredients": [
+        3,
+        2
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 3,
+    "fields": {
+      "name": "Tomato Soup",
+      "description": "Creamy tomato soup",
+      "price": 11,
+      "dish_type": 2,
+      "cook": [
+        3
+      ],
+      "ingredients": [
+        1,
+        18
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 4,
+    "fields": {
+      "name": "Mushroom Soup",
+      "description": "Soup with mushrooms and cream",
+      "price": 12,
+      "dish_type": 2,
+      "cook": [
+        4
+      ],
+      "ingredients": [
+        16,
+        18
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 5,
+    "fields": {
+      "name": "Grilled Salmon",
+      "description": "Salmon with garlic butter",
+      "price": 26,
+      "dish_type": 3,
+      "cook": [
+        1,
+        6
+      ],
+      "ingredients": [
+        14,
+        9,
+        10
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 6,
+    "fields": {
+      "name": "Beef Steak",
+      "description": "Medium rare steak",
+      "price": 29,
+      "dish_type": 3,
+      "cook": [
+        1
+      ],
+      "ingredients": [
+        4
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 7,
+    "fields": {
+      "name": "Shrimp Risotto",
+      "description": "Rice with shrimp and cream",
+      "price": 24,
+      "dish_type": 3,
+      "cook": [
+        6,
+        2
+      ],
+      "ingredients": [
+        13,
+        15,
+        18
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 8,
+    "fields": {
+      "name": "Chicken Alfredo",
+      "description": "Creamy pasta with chicken",
+      "price": 22,
+      "dish_type": 3,
+      "cook": [
+        2,
+        3
+      ],
+      "ingredients": [
+        3,
+        18,
+        9
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 9,
+    "fields": {
+      "name": "Beef Burger",
+      "description": "Burger with beef and cheese",
+      "price": 19,
+      "dish_type": 3,
+      "cook": [
+        4,
+        5
+      ],
+      "ingredients": [
+        4,
+        2
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 10,
+    "fields": {
+      "name": "Margherita Pizza",
+      "description": "Classic pizza with tomato and cheese",
+      "price": 18,
+      "dish_type": 3,
+      "cook": [
+        4,
+        2
+      ],
+      "ingredients": [
+        1,
+        2,
+        12
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 11,
+    "fields": {
+      "name": "Chocolate Cake",
+      "description": "Rich chocolate dessert",
+      "price": 12,
+      "dish_type": 4,
+      "cook": [
+        5
+      ],
+      "ingredients": [
+        19,
+        6,
+        7,
+        9
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 12,
+    "fields": {
+      "name": "Cheesecake",
+      "description": "Classic cheesecake",
+      "price": 13,
+      "dish_type": 4,
+      "cook": [
+        3
+      ],
+      "ingredients": [
+        2,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 13,
+    "fields": {
+      "name": "Tiramisu",
+      "description": "Italian coffee dessert",
+      "price": 14,
+      "dish_type": 4,
+      "cook": [
+        4
+      ],
+      "ingredients": [
+        20,
+        6,
+        7,
+        18
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 14,
+    "fields": {
+      "name": "Espresso",
+      "description": "Strong black coffee",
+      "price": 4,
+      "dish_type": 5,
+      "cook": [
+        6
+      ],
+      "ingredients": [
+        20
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 15,
+    "fields": {
+      "name": "Cappuccino",
+      "description": "Coffee with milk foam",
+      "price": 6,
+      "dish_type": 5,
+      "cook": [
+        6
+      ],
+      "ingredients": [
+        20,
+        8
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 16,
+    "fields": {
+      "name": "French Fries",
+      "description": "Crispy fried potatoes",
+      "price": 7,
+      "dish_type": 1,
+      "cook": [
+        5
+      ],
+      "ingredients": [
+        17
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 17,
+    "fields": {
+      "name": "Garlic Bread",
+      "description": "Bread with garlic butter",
+      "price": 6,
+      "dish_type": 1,
+      "cook": [
+        4
+      ],
+      "ingredients": [
+        10,
+        9
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 18,
+    "fields": {
+      "name": "Mashed Potatoes",
+      "description": "Creamy mashed potatoes",
+      "price": 8,
+      "dish_type": 1,
+      "cook": [
+        3
+      ],
+      "ingredients": [
+        17,
+        9,
+        8
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 19,
+    "fields": {
+      "name": "Fried Rice",
+      "description": "Rice with vegetables and egg",
+      "price": 15,
+      "dish_type": 3,
+      "cook": [
+        6
+      ],
+      "ingredients": [
+        13,
+        7,
+        11
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 20,
+    "fields": {
+      "name": "Beef Stroganoff",
+      "description": "Beef with creamy mushroom sauce",
+      "price": 27,
+      "dish_type": 3,
+      "cook": [
+        1,
+        3
+      ],
+      "ingredients": [
+        4,
+        16,
+        18
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 21,
+    "fields": {
+      "name": "Chicken Curry",
+      "description": "Spicy chicken curry with rice",
+      "price": 23,
+      "dish_type": 3,
+      "cook": [
+        2,
+        6
+      ],
+      "ingredients": [
+        3,
+        13,
+        10
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 22,
+    "fields": {
+      "name": "Creamy Mushroom Pasta",
+      "description": "Pasta with mushrooms and cream sauce",
+      "price": 20,
+      "dish_type": 3,
+      "cook": [
+        3,
+        4
+      ],
+      "ingredients": [
+        16,
+        18,
+        9
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 23,
+    "fields": {
+      "name": "Salmon Teriyaki",
+      "description": "Grilled salmon with teriyaki glaze",
+      "price": 28,
+      "dish_type": 3,
+      "cook": [
+        6,
+        1
+      ],
+      "ingredients": [
+        14,
+        10
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 24,
+    "fields": {
+      "name": "Stuffed Mushrooms",
+      "description": "Mushrooms stuffed with cheese",
+      "price": 13,
+      "dish_type": 1,
+      "cook": [
+        5
+      ],
+      "ingredients": [
+        16,
+        2
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 25,
+    "fields": {
+      "name": "Onion Soup",
+      "description": "French onion soup with cheese",
+      "price": 12,
+      "dish_type": 2,
+      "cook": [
+        4
+      ],
+      "ingredients": [
+        11,
+        2
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 26,
+    "fields": {
+      "name": "BBQ Chicken Wings",
+      "description": "Grilled wings with BBQ sauce",
+      "price": 18,
+      "dish_type": 1,
+      "cook": [
+        2,
+        5
+      ],
+      "ingredients": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 27,
+    "fields": {
+      "name": "Seafood Paella",
+      "description": "Rice with shrimp and salmon",
+      "price": 30,
+      "dish_type": 3,
+      "cook": [
+        6,
+        1
+      ],
+      "ingredients": [
+        13,
+        15,
+        14
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 28,
+    "fields": {
+      "name": "Beef Tacos",
+      "description": "Mexican tacos with beef",
+      "price": 21,
+      "dish_type": 3,
+      "cook": [
+        5,
+        4
+      ],
+      "ingredients": [
+        4,
+        1
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 29,
+    "fields": {
+      "name": "Garlic Shrimp",
+      "description": "Shrimp sautéed in garlic butter",
+      "price": 26,
+      "dish_type": 3,
+      "cook": [
+        6
+      ],
+      "ingredients": [
+        15,
+        10,
+        9
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 30,
+    "fields": {
+      "name": "Vegetable Risotto",
+      "description": "Creamy rice with vegetables",
+      "price": 19,
+      "dish_type": 3,
+      "cook": [
+        3
+      ],
+      "ingredients": [
+        13,
+        11,
+        16
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 31,
+    "fields": {
+      "name": "Chocolate Brownie",
+      "description": "Warm chocolate brownie",
+      "price": 11,
+      "dish_type": 4,
+      "cook": [
+        5
+      ],
+      "ingredients": [
+        19,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 32,
+    "fields": {
+      "name": "Pancakes",
+      "description": "Fluffy pancakes with butter",
+      "price": 10,
+      "dish_type": 4,
+      "cook": [
+        3
+      ],
+      "ingredients": [
+        5,
+        7,
+        8,
+        9
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 33,
+    "fields": {
+      "name": "Latte",
+      "description": "Coffee with steamed milk",
+      "price": 7,
+      "dish_type": 5,
+      "cook": [
+        6
+      ],
+      "ingredients": [
+        20,
+        8
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 34,
+    "fields": {
+      "name": "Iced Coffee",
+      "description": "Cold brewed coffee",
+      "price": 6,
+      "dish_type": 5,
+      "cook": [
+        6
+      ],
+      "ingredients": [
+        20
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 35,
+    "fields": {
+      "name": "Beef Lasagna",
+      "description": "Layered pasta with beef and cheese",
+      "price": 27,
+      "dish_type": 3,
+      "cook": [
+        4,
+        1
+      ],
+      "ingredients": [
+        4,
+        2,
+        5
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 36,
+    "fields": {
+      "name": "Chicken Quesadilla",
+      "description": "Grilled tortilla with chicken and cheese",
+      "price": 20,
+      "dish_type": 3,
+      "cook": [
+        5,
+        2
+      ],
+      "ingredients": [
+        3,
+        2
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 37,
+    "fields": {
+      "name": "Mushroom Burger",
+      "description": "Burger with mushrooms and cheese",
+      "price": 18,
+      "dish_type": 3,
+      "cook": [
+        4
+      ],
+      "ingredients": [
+        16,
+        2
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 38,
+    "fields": {
+      "name": "Baked Potato",
+      "description": "Oven baked potato with butter",
+      "price": 9,
+      "dish_type": 1,
+      "cook": [
+        3
+      ],
+      "ingredients": [
+        17,
+        9
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 39,
+    "fields": {
+      "name": "Rice Pudding",
+      "description": "Sweet rice dessert with milk",
+      "price": 10,
+      "dish_type": 4,
+      "cook": [
+        5
+      ],
+      "ingredients": [
+        13,
+        8,
+        6
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 40,
+    "fields": {
+      "name": "Herb Roasted Chicken",
+      "description": "Oven roasted chicken with herbs",
+      "price": 24,
+      "dish_type": 3,
+      "cook": [
+        1,
+        2
+      ],
+      "ingredients": [
+        3,
+        12
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 41,
+    "fields": {
+      "name": "Spaghetti Bolognese",
+      "description": "Classic Italian pasta with beef sauce",
+      "price": 23,
+      "dish_type": 3,
+      "cook": [
+        4,
+        1
+      ],
+      "ingredients": [
+        4,
+        1,
+        11
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 42,
+    "fields": {
+      "name": "Chicken Teriyaki Bowl",
+      "description": "Grilled chicken with rice and sauce",
+      "price": 21,
+      "dish_type": 3,
+      "cook": [
+        6,
+        2
+      ],
+      "ingredients": [
+        3,
+        13
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 43,
+    "fields": {
+      "name": "Caprese Salad",
+      "description": "Tomato with mozzarella and basil",
+      "price": 14,
+      "dish_type": 1,
+      "cook": [
+        3
+      ],
+      "ingredients": [
+        1,
+        2,
+        12
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 44,
+    "fields": {
+      "name": "Pumpkin Soup",
+      "description": "Creamy seasonal pumpkin soup",
+      "price": 13,
+      "dish_type": 2,
+      "cook": [
+        5
+      ],
+      "ingredients": [
+        18
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 45,
+    "fields": {
+      "name": "Grilled Beef Ribs",
+      "description": "Slow cooked BBQ ribs",
+      "price": 32,
+      "dish_type": 3,
+      "cook": [
+        1
+      ],
+      "ingredients": [
+        4
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 46,
+    "fields": {
+      "name": "Seafood Pasta",
+      "description": "Pasta with shrimp and salmon",
+      "price": 29,
+      "dish_type": 3,
+      "cook": [
+        6,
+        4
+      ],
+      "ingredients": [
+        15,
+        14,
+        18
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 47,
+    "fields": {
+      "name": "Chicken Nuggets",
+      "description": "Crispy fried chicken pieces",
+      "price": 15,
+      "dish_type": 1,
+      "cook": [
+        2
+      ],
+      "ingredients": [
+        3,
+        5
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 48,
+    "fields": {
+      "name": "Garlic Butter Shrimp",
+      "description": "Shrimp with garlic butter sauce",
+      "price": 27,
+      "dish_type": 3,
+      "cook": [
+        6
+      ],
+      "ingredients": [
+        15,
+        10,
+        9
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 49,
+    "fields": {
+      "name": "Beef Meatballs",
+      "description": "Homemade beef meatballs in tomato sauce",
+      "price": 22,
+      "dish_type": 3,
+      "cook": [
+        4,
+        1
+      ],
+      "ingredients": [
+        4,
+        1
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 50,
+    "fields": {
+      "name": "Fried Mushrooms",
+      "description": "Golden fried mushrooms",
+      "price": 12,
+      "dish_type": 1,
+      "cook": [
+        3
+      ],
+      "ingredients": [
+        16
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 51,
+    "fields": {
+      "name": "Vanilla Ice Cream",
+      "description": "Classic vanilla ice cream",
+      "price": 8,
+      "dish_type": 4,
+      "cook": [
+        5
+      ],
+      "ingredients": [
+        8,
+        6
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 52,
+    "fields": {
+      "name": "Chocolate Milkshake",
+      "description": "Cold chocolate drink",
+      "price": 9,
+      "dish_type": 5,
+      "cook": [
+        5
+      ],
+      "ingredients": [
+        19,
+        8
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 53,
+    "fields": {
+      "name": "Green Tea",
+      "description": "Hot green tea",
+      "price": 5,
+      "dish_type": 5,
+      "cook": [
+        6
+      ],
+      "ingredients": []
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 54,
+    "fields": {
+      "name": "Omelette",
+      "description": "Egg omelette with cheese",
+      "price": 11,
+      "dish_type": 1,
+      "cook": [
+        3
+      ],
+      "ingredients": [
+        7,
+        2,
+        9
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 55,
+    "fields": {
+      "name": "Chicken Soup",
+      "description": "Traditional chicken soup",
+      "price": 14,
+      "dish_type": 2,
+      "cook": [
+        2
+      ],
+      "ingredients": [
+        3,
+        11
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 56,
+    "fields": {
+      "name": "Beef Stir Fry",
+      "description": "Beef with vegetables and rice",
+      "price": 24,
+      "dish_type": 3,
+      "cook": [
+        6,
+        1
+      ],
+      "ingredients": [
+        4,
+        13,
+        11
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 57,
+    "fields": {
+      "name": "Chicken Wrap",
+      "description": "Grilled chicken in tortilla",
+      "price": 17,
+      "dish_type": 1,
+      "cook": [
+        5
+      ],
+      "ingredients": [
+        3,
+        1
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 58,
+    "fields": {
+      "name": "Berry Cheesecake",
+      "description": "Cheesecake with berry topping",
+      "price": 14,
+      "dish_type": 4,
+      "cook": [
+        3
+      ],
+      "ingredients": [
+        2,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 59,
+    "fields": {
+      "name": "Hot Chocolate",
+      "description": "Warm chocolate drink",
+      "price": 7,
+      "dish_type": 5,
+      "cook": [
+        5
+      ],
+      "ingredients": [
+        19,
+        8
+      ]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 60,
+    "fields": {
+      "name": "Roasted Vegetables",
+      "description": "Seasonal oven roasted vegetables",
+      "price": 16,
+      "dish_type": 3,
+      "cook": [
+        3,
+        4
+      ],
+      "ingredients": [
+        11,
+        16
+      ]
+    }
+  }
+]
