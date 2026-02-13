@@ -23,7 +23,7 @@
 
   <h3>Ingredients</h3>
   <ul>
-    {% for ingredient in ingredients %}
+    {% for ingredient in dish.ingredient.all %}
       <li>{{ ingredient.name }}</li>
     {% empty %}
       <li>No ingredients</li>
