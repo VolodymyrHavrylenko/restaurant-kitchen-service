@@ -2,6 +2,7 @@ from decimal import Decimal
 
 from django.conf import settings
 from django.contrib.auth.models import AbstractUser
+from django.core.exceptions import ValidationError
 from django.db import models
 
 
@@ -31,6 +32,11 @@ class DishType(models.Model):
         verbose_name_plural = "Dish Types"
         ordering = ["name"]
 
+
+    def clean(self):
+        if DishType.objects.filter(name__iexact=self.name).exclude(pk=self.pk).exists():
+            raise ValidationError(f"The Type of Dish '{self.name}' already exists.")
+
     def __str__(self):
         return self.name
 
@@ -45,6 +51,11 @@ class Ingredient(models.Model):
         verbose_name = "Ingredient"
         verbose_name_plural = "Ingredients"
         ordering = ["name"]
+
+
+    def clean(self):
+        if Ingredient.objects.filter(name__iexact=self.name).exclude(pk=self.pk).exists():
+            raise ValidationError(f"The ingredient '{self.name}' already exists.")
 
     def __str__(self):
         return self.name
