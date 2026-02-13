@@ -3,29 +3,37 @@
 {% block title %}Cook Detail{% endblock %}
 
 {% block content %}
-<div class="container mt-4">
+  <div class="container mt-4">
     <h1>Cook Detail</h1>
 
     <div class="card">
-        <div class="card-body">
-            <h3 class="card-title">{{ cook.username }} {% if user == cook %}(Me){% endif %}</h3>
-            <p class="card-text"><strong>Full Name:</strong> {{ cook.first_name }} {{ cook.last_name }}</p>
-            <p class="card-text"><strong>Years of Experience:</strong> {{ cook.year_of_experience }}</p>
-            <p class="card-text"><strong>Email:</strong> {{ cook.email }}</p>
+      <div class="card-body">
+        <h3 class="card-title">{{ cook.username }} {% if user == cook %}(Me){% endif %}</h3>
+        <p class="card-text"><strong>Full Name:</strong> {{ cook.first_name }} {{ cook.last_name }}</p>
+        <p class="card-text"><strong>Years of Experience:</strong> {{ cook.year_of_experience }}</p>
+        <p class="card-text"><strong>Email:</strong> {{ cook.email }}</p>
 
-            {% if cook.dishes.exists %}
-            <p class="card-text"><strong>Dishes:</strong></p>
-            <ul>
-                {% for dish in cook.dishes.all %}
-                    <li>{{ dish.name }}{% if dish.description %} - {{ dish.description }}{% endif %}</li>
-                {% endfor %}
-            </ul>
-            {% else %}
-                <p>This cook has no dishes assigned.</p>
-            {% endif %}
-        </div>
+        {% if cook.dishes.exists %}
+          <p class="card-text"><strong>Dishes:</strong></p>
+          <ul>
+            {% for dish in cook.dishes.all %}
+              <li>{{ dish.name }}{% if dish.description %} - {{ dish.description }}{% endif %}</li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <p>This cook has no dishes assigned.</p>
+        {% endif %}
+      </div>
     </div>
-    {% if cook == user %}<a href="{% url 'kitchen:cook-update' pk=cook.pk %}" class="btn btn-secondary mt-3">Edit</a>{% endif %}
+    {% if cook == user or user.is_staff %}
+      <a href="{% url 'kitchen:cook-update' pk=cook.pk %}" class="btn btn-secondary mt-3">Edit</a>
+    {% endif %}
+    {% if user.is_staff and user != cook %}
+      <td><a href="{% url 'kitchen:cook-delete' pk=cook.id %}" class="btn btn-danger mt-3">
+        Delete
+      </a>
+      </td>
+    {% endif %}
     <a href="{% url 'kitchen:cook-list' %}" class="btn btn-secondary mt-3">Back to Cooks List</a>
-</div>
+  </div>
 {% endblock %}

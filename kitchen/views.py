@@ -48,6 +48,11 @@ class CookUpdateView(LoginRequiredMixin, generic.UpdateView):
         return reverse_lazy("kitchen:cook-detail", args=[self.object.id])
 
 
+class CookDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Cook
+    success_url = reverse_lazy("kitchen:cook-list")
+
+
 class DishListView(generic.ListView):
     model = Dish
     paginate_by = 10
@@ -79,6 +84,11 @@ class DishUpdateView(LoginRequiredMixin, generic.UpdateView):
         return reverse_lazy("kitchen:dish-detail", args=[self.object.id])
 
 
+class DishDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Dish
+    success_url = reverse_lazy("kitchen:dish-list")
+
+
 class DishTypeListView(generic.ListView):
     model = DishType
     paginate_by = 4
@@ -93,6 +103,12 @@ class DishTypeCreateView(LoginRequiredMixin, generic.CreateView):
     success_url = reverse_lazy("kitchen:dish-type-list")
 
 
+class DishTypeDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = DishType
+    success_url = reverse_lazy("kitchen:dish-type-list")
+    template_name = "kitchen/dish_type_confirm_delete.html"
+
+
 class IngredientListView(LoginRequiredMixin, generic.ListView):
     model = Ingredient
     paginate_by = 5
@@ -101,4 +117,9 @@ class IngredientListView(LoginRequiredMixin, generic.ListView):
 class IngredientCreateView(LoginRequiredMixin, generic.CreateView):
     model = Ingredient
     fields = "__all__"
+    success_url = reverse_lazy("kitchen:ingredient-list")
+
+
+class IngredientDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Ingredient
     success_url = reverse_lazy("kitchen:ingredient-list")

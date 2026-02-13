@@ -3,32 +3,38 @@
 {% block title %}{{ dish.name }}{% endblock %}
 
 {% block content %}
-<h1>{{ dish.name }}</h1>
+  <h1>{{ dish.name }}</h1>
 
-<p><strong>Type:</strong> {{ dish.dish_type.name }}</p>
-<p><strong>Price:</strong> ${{ dish.price }}</p>
+  <p><strong>Type:</strong> {{ dish.dish_type.name }}</p>
+  <p><strong>Price:</strong> ${{ dish.price }}</p>
 
-{% if dish.description %}
-<p><strong>Description:</strong> {{ dish.description }}</p>
-{% endif %}
+  {% if dish.description %}
+    <p><strong>Description:</strong> {{ dish.description }}</p>
+  {% endif %}
 
-<h3>Cooks</h3>
-<ul>
-  {% for cook in cooks %}
-    <li>{{ cook.username }}</li>
-  {% empty %}
-    <li>No cooks assigned</li>
-  {% endfor %}
-</ul>
+  <h3>Cooks</h3>
+  <ul>
+    {% for cook in cooks %}
+      <li>{{ cook.username }}</li>
+    {% empty %}
+      <li>No cooks assigned</li>
+    {% endfor %}
+  </ul>
 
-<h3>Ingredients</h3>
-<ul>
-  {% for ingredient in ingredients %}
-    <li>{{ ingredient.name }}</li>
-  {% empty %}
-    <li>No ingredients</li>
-  {% endfor %}
-</ul>
-      {% if user.is_staff %}<a href="{% url 'kitchen:dish-update' pk=dish.pk%}" class="btn btn-secondary mt-3">Edit</a>{% endif %}
-    <a href="{% url 'kitchen:dish-list' %}" class="btn btn-secondary mt-3">Back to Dish List</a>
+  <h3>Ingredients</h3>
+  <ul>
+    {% for ingredient in ingredients %}
+      <li>{{ ingredient.name }}</li>
+    {% empty %}
+      <li>No ingredients</li>
+    {% endfor %}
+  </ul>
+  {% if user.is_staff %}
+    <a href="{% url 'kitchen:dish-update' pk=dish.pk %}" class="btn btn-secondary mt-3">Edit</a>
+    <a href="{% url 'kitchen:dish-delete' pk=dish.id %}" class="btn btn-danger mt-3">
+      Delete
+    </a>
+  {% endif %}
+  <a href="{% url 'kitchen:dish-list' %}" class="btn btn-secondary mt-3">Back to Dish List</a>
+
 {% endblock %}
