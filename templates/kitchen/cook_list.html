@@ -1,4 +1,9 @@
 {% extends "base.html" %}
+
+{% block title %}
+<title>Cook List</title>
+{% endblock %}
+
 {% block content %}
   <h1>All cooks in our kitchen</h1>
   {% if cook_list %}
@@ -11,7 +16,7 @@
       </tr>
       {% for cook in cook_list %}
         <tr>
-          <td>{{ cook.id }}</td>
+          <td><a href="{% url "kitchen:cook-detail" pk=cook.pk %}">{{ cook.id }}</a></td>
           <td>{{ cook.username }} {% if user == cook %}(Me){% endif %} </td>
           <td>{{ cook.first_name }} {{ cook.last_name }}</td>
           <td>{{ cook.year_of_experience }}</td>
