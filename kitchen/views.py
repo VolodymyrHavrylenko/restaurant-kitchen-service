@@ -18,7 +18,8 @@ def index(request):
         "ingredients": ingredients,
         "num_visits": request.session["num_visits"],
     }
-    return render(request, 'kitchen/index.html', context=context)
+    return render(request, "kitchen/index.html", context=context)
+
 
 class CookListView(generic.ListView):
     model = Cook
@@ -28,6 +29,12 @@ class CookListView(generic.ListView):
 class DishListView(generic.ListView):
     model = Dish
     paginate_by = 10
+
+    def get_queryset(self):
+        return Dish.objects.select_related("dish_type").prefetch_related(
+            "ingredient",
+            "cook"
+        )
 
 
 class DishTypeListView(generic.ListView):
