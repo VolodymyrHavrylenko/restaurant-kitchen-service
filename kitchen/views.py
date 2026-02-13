@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
 from django.shortcuts import render
 
@@ -21,7 +22,7 @@ def index(request):
     return render(request, "kitchen/index.html", context=context)
 
 
-class CookListView(generic.ListView):
+class CookListView(LoginRequiredMixin, generic.ListView):
     model = Cook
     paginate_by = 5
 
@@ -44,6 +45,6 @@ class DishTypeListView(generic.ListView):
     context_object_name = "dish_type_list"
 
 
-class IngredientListView(generic.ListView):
+class IngredientListView(LoginRequiredMixin, generic.ListView):
     model = Ingredient
     paginate_by = 5
