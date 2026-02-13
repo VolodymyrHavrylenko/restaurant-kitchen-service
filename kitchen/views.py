@@ -1,3 +1,4 @@
+from django.views import generic
 from django.shortcuts import render
 
 from kitchen.models import Cook, Dish, DishType, Ingredient
@@ -18,3 +19,9 @@ def index(request):
         "num_visits": request.session["num_visits"],
     }
     return render(request, 'kitchen/index.html', context=context)
+
+class CookListView(generic.ListView):
+    model = Cook
+    paginate_by = 5
+
+
