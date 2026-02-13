@@ -1,7 +1,9 @@
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db.models import ProtectedError
 from django.urls import reverse_lazy
 from django.views import generic
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from kitchen.forms import CookCreateForm, DishCreateForm
 from kitchen.models import Cook, Dish, DishType, Ingredient
@@ -107,6 +109,15 @@ class DishTypeDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = DishType
     success_url = reverse_lazy("kitchen:dish-type-list")
     template_name = "kitchen/dish_type_confirm_delete.html"
+    def post(self, request, *args, **kwargs):
+        try:
+            return super().post(request, *args, **kwargs)
+        except ProtectedError:
+            messages.error(
+                request,
+                "You can't delete type of dish before will delete all dish this type."
+            )
+            return redirect("kitchen:dish-type-list")
 
 
 class IngredientListView(LoginRequiredMixin, generic.ListView):
