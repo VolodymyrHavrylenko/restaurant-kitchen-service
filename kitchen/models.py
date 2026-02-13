@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django.db import models
@@ -59,8 +61,10 @@ class Dish(models.Model):
         null=True,
         help_text="Description of the dish",
     )
-    price = models.PositiveIntegerField(
-        default=0,
+    price = models.DecimalField(
+        max_digits=8,
+        decimal_places=2,
+        default=Decimal("0.00"),
         help_text="Price of the dish",
     )
     dish_type = models.ForeignKey(

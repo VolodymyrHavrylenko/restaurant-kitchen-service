@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>All dish in menu</h1>
+  {% if dish_list %}
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Price</th>
+        <th>Ingredients</th>
+        <th>Description</th>
+      </tr>
+      {% for dish in dish_list %}
+        <tr>
+          <td>{{ dish.id }}</td>
+          <td>{{ dish.name }}</td>
+          <td>{{ dish.dish_type }}</td>
+          <td>{{ dish.price }}</td>
+          <td>
+            {% for ingredient in dish.ingredient.all %}
+              {{ ingredient }},
+            {% endfor %}
+          </td>
+          <td>{{ dish.description }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p>No dishes found.</p>
+  {% endif %}
+{% endblock %}
