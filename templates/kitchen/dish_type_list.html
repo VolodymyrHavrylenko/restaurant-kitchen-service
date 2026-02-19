@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load crispy_forms_filters %}
 
 {% block title %}
   <title>Type of Dish List</title>
@@ -7,6 +8,10 @@
 {% block content %}
   <h1>All types of dish that we cook {% if user.is_authenticated %}
     <a style="float: right" href="{% url "kitchen:dish-type-create" %}">+</a>{% endif %}</h1>
+  <form action="" method="get" class="form-inline">
+    {{ search_form|crispy }}
+    <input type="submit" value="🔍" class="btn btn-outline-primary">
+  </form>
   {% if dish_type_list %}
     <table class="table">
       <tr>
