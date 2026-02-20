@@ -1,7 +1,6 @@
 {% load static %}
 
 
-<!-- Navbar -->
 <div class="container position-sticky z-index-sticky top-0">
   <div class="row">
     <div class="col-12">
@@ -11,7 +10,7 @@
           <a class="navbar-brand font-weight-bolder ms-sm-3 text-sm"
              href="{% url "kitchen:index" %}"
              title="Coded by Volodymyr Havrylenko" data-placement="bottom">
-            Restaurant Kitchen Service
+            Restaurant
           </a>
           <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse"
                   data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false"
@@ -57,11 +56,14 @@
                       Account
                     </h6>
                     {% if request.user.is_authenticated %}
-                      <a href="#" class="dropdown-item border-radius-md">
-                        <span>Logout</span>
-                      </a>
+                      <form action="{% url 'logout' %}" method="post">
+                        {% csrf_token %}
+                        <button class="dropdown-item border-radius-md">
+                          <span>Logout</span>
+                        </button>
+                      </form>
                     {% else %}
-                      <a href="#" class="dropdown-item border-radius-md">
+                      <a href="{% url 'login' %}" class="dropdown-item border-radius-md">
                         <span>Sign IN</span>
                       </a>
                     {% endif %}
@@ -89,15 +91,20 @@
                     <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 mt-3">
                       Account
                     </h6>
+
                     {% if request.user.is_authenticated %}
-                      <a href="#" class="dropdown-item border-radius-md">
-                        <span>Logout</span>
-                      </a>
+                      <form action="{% url 'logout' %}" method="post">
+                        {% csrf_token %}
+                        <button class="dropdown-item border-radius-md">
+                          <span>Logout</span>
+                        </button>
+                      </form>
                     {% else %}
-                      <a href="#" class="dropdown-item border-radius-md">
+                      <a href="{% url 'login' %}" class="dropdown-item border-radius-md">
                         <span>Sign IN</span>
                       </a>
                     {% endif %}
+
                   </div>
 
                 </div>
@@ -105,12 +112,12 @@
 
               {% if request.user.is_authenticated %}
                 <li class="nav-item ms-lg-auto">
+
                   <form method="post" action="{% url 'logout' %}">
                     {% csrf_token %}
                     <button type="submit" class="nav-link nav-link-icon me-2">
-                        <i class="fa fa-sign-out me-1"></i>
-                        <p class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip"
-                           data-bs-placement="bottom" title="Logout">Logout</p>
+                      <span class="d-inline text-sm z-index-1 font-weight-semibold" data-bs-toggle="tooltip"
+                            data-bs-placement="bottom">{{ user.username }}</span>
                     </button>
                   </form>
 
@@ -135,7 +142,6 @@
           </div>
         </div>
       </nav>
-      <!-- End Navbar -->
     </div>
   </div>
 </div>
