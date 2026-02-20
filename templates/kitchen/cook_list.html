@@ -1,35 +1,93 @@
 {% extends "base.html" %}
 {% load crispy_forms_filters %}
+{% load static %}
 
 {% block title %}
   <title>Cook List</title>
 {% endblock %}
 
 {% block content %}
-  <h1>All cooks in our kitchen {% if user.is_authenticated and user.is_staff %}
-    <a style="float: right" href="{% url "kitchen:cook-create" %}">+</a>{% endif %} </h1>
-  <form action="" method="get" class="form-inline">
-    {{ search_form|crispy }}
-    <input type="submit" value="🔍" class="btn btn-outline-primary">
-  </form>
-  {% if cook_list %}
-    <table class="table">
-      <tr>
-        <th>ID</th>
-        <th>Username</th>
-        <th>Full Name</th>
-        <th>Years of Experience</th>
-      </tr>
+  {#  <h1>All cooks in our kitchen {% if user.is_authenticated and user.is_staff %}#}
+  {#    <a style="float: right" href="{% url "kitchen:cook-create" %}">+</a>{% endif %} </h1>#}
+  {#  <form action="" method="get" class="form-inline">#}
+  {#    {{ search_form|crispy }}#}
+  {#    <input type="submit" value="🔍" class="btn btn-outline-primary">#}
+  {#  </form>#}
+  {#  {% if cook_list %}#}
+  {#    <table class="table">#}
+  {#      <tr>#}
+  {#        <th>ID</th>#}
+  {#        <th>Username</th>#}
+  {#        <th>Full Name</th>#}
+  {#        <th>Years of Experience</th>#}
+  {#      </tr>#}
+  {#      {% for cook in cook_list %}#}
+  {#        <tr>#}
+  {#          <td><a href="{% url "kitchen:cook-detail" pk=cook.pk %}">{{ cook.id }}</a></td>#}
+  {#          <td>{{ cook.username }} {% if user == cook %}(Me){% endif %} </td>#}
+  {#          <td>{{ cook.first_name }} {{ cook.last_name }}</td>#}
+  {#          <td>{{ cook.year_of_experience }}</td>#}
+  {#        </tr>#}
+  {#      {% endfor %}#}
+  {#    </table>#}
+  {#  {% else %}#}
+  {#    <p>No cooks found.</p>#}
+  {#  {% endif %}#}
+
+
+  <header class="header-2">
+    <div class="page-header min-vh-75 relative"
+         style="background-image: url('{% static "assets/img/bg-landing_my.png" %}')">
+      <span class="mask bg-gradient-dark opacity-4"></span>
+    </div>
+  </header>
+
+  <!-- -------- END HEADER 7 w/ text and video ------- -->
+  <div class="card card-body shadow-xl mx-3 mx-md-4 mt-n6">
+  <!-- Section with four info areas left & one card right with image and waves -->
+  <section class="pb-5 position-relative bg-gradient-dark mx-n3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 text-start mb-5 mt-5">
+          <h3 class="text-white z-index-1 position-relative">The Executive Team</h3>
+          <p class="text-white opacity-8 mb-0">Our professional cooks bring their passion and expertise to every dish,
+            ensuring high-quality
+            and delicious meals for our guests.</p>
+        </div>
+      </div>
       {% for cook in cook_list %}
-        <tr>
-          <td><a href="{% url "kitchen:cook-detail" pk=cook.pk %}">{{ cook.id }}</a></td>
-          <td>{{ cook.username }} {% if user == cook %}(Me){% endif %} </td>
-          <td>{{ cook.first_name }} {{ cook.last_name }}</td>
-          <td>{{ cook.year_of_experience }}</td>
-        </tr>
+
+
+        <div class="row">
+          <div class="col-lg-6 col-12">
+            <div class="card card-profile mt-4">
+              <div class="row">
+                <div class="col-lg-4 col-md-6 col-12 mt-n5">
+                  <a href="{% url "kitchen:cook-detail" pk=cook.pk %}">
+                    <div class="p-3 pe-md-0">
+                      <img class="w-100 border-radius-md shadow-lg"
+                           src="{% static 'assets/img/'|add:cook.username|add:'.jpg' %}">
+                    </div>
+                  </a>
+                </div>
+                <div class="col-lg-8 col-md-6 col-12 my-auto">
+                  <div class="card-body ps-lg-0">
+                    <h5 class="mb-0">{{ cook.username }}</h5>
+                    <h6 class="text-info">{{ cook.first_name }} {{ cook.last_name }}</h6>
+                    <p class="mb-0">Has {{ cook.year_of_experience }} year{{ cook.year_of_experience|pluralize }} of
+                      professional cooking experience.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+
+      {% empty %}
+        <p>No cooks found!</p>
       {% endfor %}
-    </table>
-  {% else %}
-    <p>No cooks found.</p>
-  {% endif %}
+
+    </div>
+  </section>
 {% endblock %}

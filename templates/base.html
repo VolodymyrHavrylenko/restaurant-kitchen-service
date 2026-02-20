@@ -60,6 +60,9 @@
     {% endblock navigation %}
 
     {% block content %}{% endblock content %}
+    {% block pagination %}
+      {% include "includes/pagination.html" %}
+    {% endblock pagination %}
 
     {% block footer %}
         {% include "includes/footer.html" %}
