@@ -7,34 +7,6 @@
 {% endblock %}
 
 {% block content %}
-  {#  <h1>All cooks in our kitchen {% if user.is_authenticated and user.is_staff %}#}
-  {#    <a style="float: right" href="{% url "kitchen:cook-create" %}">+</a>{% endif %} </h1>#}
-  {#  <form action="" method="get" class="form-inline">#}
-  {#    {{ search_form|crispy }}#}
-  {#    <input type="submit" value="🔍" class="btn btn-outline-primary">#}
-  {#  </form>#}
-  {#  {% if cook_list %}#}
-  {#    <table class="table">#}
-  {#      <tr>#}
-  {#        <th>ID</th>#}
-  {#        <th>Username</th>#}
-  {#        <th>Full Name</th>#}
-  {#        <th>Years of Experience</th>#}
-  {#      </tr>#}
-  {#      {% for cook in cook_list %}#}
-  {#        <tr>#}
-  {#          <td><a href="{% url "kitchen:cook-detail" pk=cook.pk %}">{{ cook.id }}</a></td>#}
-  {#          <td>{{ cook.username }} {% if user == cook %}(Me){% endif %} </td>#}
-  {#          <td>{{ cook.first_name }} {{ cook.last_name }}</td>#}
-  {#          <td>{{ cook.year_of_experience }}</td>#}
-  {#        </tr>#}
-  {#      {% endfor %}#}
-  {#    </table>#}
-  {#  {% else %}#}
-  {#    <p>No cooks found.</p>#}
-  {#  {% endif %}#}
-
-
   <header class="header-2">
     <div class="page-header min-vh-75 relative"
          style="background-image: url('{% static "assets/img/bg-landing_cook.png" %}')">
@@ -95,7 +67,7 @@
                 </div>
                 <div class="col-lg-8 col-md-6 col-12 my-auto">
                   <div class="card-body ps-lg-0">
-                    <h5 class="mb-1">{{ cook.username }}</h5>
+                    <h5 class="mb-1">{{ cook.username }} {% if user == cook %}(Me){% endif %}</h5>
                     <h6 class="text-info mb-2">{{ cook.first_name }} {{ cook.last_name }}</h6>
                     <p class="mb-0">
                       Has {{ cook.year_of_experience }} year{{ cook.year_of_experience|pluralize }} of professional
