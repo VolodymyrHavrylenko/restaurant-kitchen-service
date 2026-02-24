@@ -10,7 +10,10 @@ class CookCreateForm(UserCreationForm):
 
     class Meta:
         model = Cook
-        fields = UserCreationForm.Meta.fields + ("first_name", "last_name", "year_of_experience",)
+        fields = UserCreationForm.Meta.fields + (
+            "first_name", "last_name", "year_of_experience",
+        )
+
 
 class DishCreateForm(forms.ModelForm):
     cook = forms.ModelMultipleChoiceField(
@@ -19,6 +22,7 @@ class DishCreateForm(forms.ModelForm):
     ingredient = forms.ModelMultipleChoiceField(
         queryset=Ingredient.objects.all(), widget=forms.CheckboxSelectMultiple
     )
+
     class Meta:
         model = Dish
         fields = "__all__"

@@ -63,6 +63,7 @@ class CookCreateView(LoginRequiredMixin, generic.CreateView):
     def get_success_url(self):
         return reverse_lazy("kitchen:cook-detail", args=[self.object.id])
 
+
 class CookUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Cook
     fields = ["first_name", "last_name", "year_of_experience"]
@@ -159,13 +160,15 @@ class DishTypeDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = DishType
     success_url = reverse_lazy("kitchen:dish-type-list")
     template_name = "kitchen/dish_type_confirm_delete.html"
+
     def post(self, request, *args, **kwargs):
         try:
             return super().post(request, *args, **kwargs)
         except ProtectedError:
             messages.error(
                 request,
-                "You can't delete type of dish before will delete all dish this type."
+                "You can't delete type of dish "
+                "before will delete all dish this type."
             )
             return redirect("kitchen:dish-type-list")
 

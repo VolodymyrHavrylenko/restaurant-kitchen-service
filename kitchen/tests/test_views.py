@@ -80,7 +80,7 @@ class PrivateViewsTest(TestCase):
         """
         Verify that an existing dish can be updated.
         """
-        response = self.client.post(
+        self.client.post(
             reverse("kitchen:dish-update", args=[self.dish.id]),
             {
                 "name": "Updated",
@@ -132,4 +132,6 @@ class PrivateViewsTest(TestCase):
             reverse("kitchen:ingredient-delete", args=[self.ingredient.id])
         )
         self.assertEqual(response.status_code, 302)
-        self.assertFalse(Ingredient.objects.filter(id=self.ingredient.id).exists())
+        self.assertFalse(
+            Ingredient.objects.filter(id=self.ingredient.id).exists()
+        )

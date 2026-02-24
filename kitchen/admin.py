@@ -10,6 +10,8 @@ from kitchen.models import (
 )
 
 admin.site.unregister(Group)
+
+
 @admin.register(Cook)
 class CookAdmin(UserAdmin):
     list_display = UserAdmin.list_display + (
@@ -26,10 +28,10 @@ class CookAdmin(UserAdmin):
             "Additional info",
             {
                 "fields": (
-                "first_name",
-                "last_name",
-                "year_of_experience",
-            )
+                    "first_name",
+                    "last_name",
+                    "year_of_experience",
+                )
             }
         ),
     )
@@ -37,12 +39,10 @@ class CookAdmin(UserAdmin):
 
 @admin.register(Dish)
 class DishAdmin(admin.ModelAdmin):
-    list_display =["name", "dish_type", "price", "description"]
+    list_display = ["name", "dish_type", "price", "description"]
     list_filter = ["dish_type", "ingredient"]
     search_fields = ["name", "cook__username"]
 
+
 admin.site.register(DishType)
 admin.site.register(Ingredient)
-
-
-

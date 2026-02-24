@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from django.test import TestCase, Client
+from django.test import TestCase
 from django.urls import reverse
 
 from kitchen.models import Dish, Ingredient, DishType
@@ -51,6 +51,7 @@ class CookAdminSiteTests(TestCase):
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "year_of_experience")
+
 
 class DishAdminSiteTests(TestCase):
     def setUp(self):
