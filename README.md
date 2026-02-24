@@ -108,3 +108,27 @@ python manage.py runserver
   - **jamie** with password `3edczaq1` (not staff)  
 - Ingredients and dish types can be created by all users, but deletion is protected.
 
+## 5. Screenshots
+
+### Home page
+![Home page](static/screenshots/home_page.jpg)
+
+### Cook List
+![Cook List](static/screenshots/cook_list_page.jpg)
+
+### Cook Detail
+![Cook Detail](static/screenshots/cook_detail_page.jpg)
+
+### Cook Create
+![Cook Create](static/screenshots/cook_create_form.jpg)
+
+### Dish List
+![Dish List](static/screenshots/dish_list_page.jpg)
+
+### Dish Detail
+![Dish Detail](static/screenshots/dish_detail_page.jpg)
+
+### Dish Delete
+![Dish Delete](static/screenshots/dish_confirm_delete_page.jpg)
+
+
