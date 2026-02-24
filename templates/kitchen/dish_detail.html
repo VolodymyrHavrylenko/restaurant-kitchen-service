@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  <title>{{ dish.name }}</title>
+{% endblock %}
+
+{% block content %}
+  <header class="header-2">
+    <div class="page-header min-vh-75 relative"
+         style="background-image: url('{% static "assets/img/bg-landing_dish.jpg" %}')">
+      <span class="mask bg-gradient-dark opacity-4"></span>
+    </div>
+  </header>
+
+  <div class="card card-body shadow-xl mx-3 mx-md-4 mt-n6">
+    <section class="pb-5 position-relative bg-gradient-dark mx-n3">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-8 text-start mb-5 mt-5">
+            <h3 class="text-white position-relative z-index-1">Dish Detail</h3>
+            <p class="text-white opacity-8">
+              Detailed information about this dish.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-8 col-md-12 mx-auto">
+
+            <div class="card shadow-lg mb-4">
+              <div class="card-body">
+
+                <h4 class="text-black mb-3">{{ dish.name }}</h4>
+
+                <p class="text-black mb-1">
+                  <strong>Type:</strong> {{ dish.dish_type.name }}
+                </p>
+
+                <p class="text-black mb-1">
+                  <strong>Price:</strong> ${{ dish.price }}
+                </p>
+
+                {% if dish.description %}
+                  <p class="text-black">
+                    <strong>Description:</strong> {{ dish.description }}
+                  </p>
+                {% endif %}
+
+                <hr>
+
+                <h6 class="text-black">Cooks</h6>
+                <ul class="text-black">
+                  {% for cook in cooks %}
+                    <li>{{ cook.username }}</li>
+                  {% empty %}
+                    <li>No cooks assigned</li>
+                  {% endfor %}
+                </ul>
+
+                <h6 class="text-black mt-3">Ingredients</h6>
+                <ul class="text-black">
+                  {% for ingredient in dish.ingredient.all %}
+                    <li>{{ ingredient.name }}</li>
+                  {% empty %}
+                    <li>No ingredients</li>
+                  {% endfor %}
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2">
+              {% if user.is_staff %}
+                <a href="{% url 'kitchen:dish-update' pk=dish.pk %}" class="btn btn-secondary">Edit</a>
+                <a href="{% url 'kitchen:dish-delete' pk=dish.id %}" class="btn btn-danger">Delete</a>
+              {% endif %}
+              <a href="{% url 'kitchen:dish-list' %}" class="btn btn-secondary">Back to Dish List</a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+{% endblock %}
