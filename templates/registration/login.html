@@ -12,12 +12,20 @@
           <div class="card z-index-0 fadeIn3 fadeInBottom">
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
               <div class="bg-gradient-dark shadow-dark border-radius-lg py-3 pe-1">
-                <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Sign in</h4>
+                <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Login</h4>
               </div>
             </div>
             <div class="card-body">
               <form role="form" class="text-start" method="post">
                 {% csrf_token %}
+
+                {% if form.non_field_errors %}
+                  <div class="alert alert-danger mb-3" role="alert">
+                    {% for error in form.non_field_errors %}
+                      {{ error }}<br>
+                    {% endfor %}
+                  </div>
+                {% endif %}
 
                 {% for field in form %}
                   <div class="mb-3">
@@ -32,7 +40,7 @@
                 {% endfor %}
 
                 <div class="text-center mt-4">
-                  <button type="submit" class="btn btn-dark w-100">Sign in</button>
+                  <button type="submit" class="btn btn-dark w-100">Login</button>
                 </div>
               </form>
             </div>
