@@ -28,7 +28,7 @@ def index(request):
         "ingredients": ingredients,
         "num_visits": request.session["num_visits"],
     }
-    return render(request, "kitchen/index.html", context=context)
+    return render(request, "kitchen/іndex.html", context=context)
 
 
 class CookListView(LoginRequiredMixin, generic.ListView):
