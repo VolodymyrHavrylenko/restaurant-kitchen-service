@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  <title>Cook Detail</title>
+{% endblock %}
+
+{% block content %}
+  <header class="header-2">
+    <div class="page-header min-vh-75 relative"
+         style="background-image: url('{% static "assets/img/bg-landing_cook.jpg" %}')">
+      <span class="mask bg-gradient-dark opacity-4"></span>
+    </div>
+  </header>
+
+  <div class="card card-body shadow-xl mx-3 mx-md-4 mt-n6" >
+    <section class="pb-5 position-relative bg-gradient-dark mx-n3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 text-start mb-5 mt-5">
+            <h3 class="text-white z-index-1 position-relative">Cook Detail</h3>
+            <p class="text-white opacity-8 mb-4">
+              Detailed information about this cook, including their experience and dishes.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-8 col-md-12 mx-auto">
+            <div class="card card-profile shadow-lg mb-4">
+              <div class="row g-0">
+                <div class="col-lg-4 col-md-6 col-12 mt-n5">
+                  <div class="p-3 pe-md-0">
+                    <img class="w-100 border-radius-md shadow-lg"
+                         src="{% static 'assets/img/'|add:cook.username|add:'.jpg' %}">
+                  </div>
+                </div>
+                <div class="col-lg-8 col-md-6 col-12 my-auto">
+                  <div class="card-body ps-lg-0">
+                    <h5 class="mb-1 text-black">{{ cook.username }} {% if user == cook %}(Me){% endif %}</h5>
+                    <h6 class="text-info mb-2">{{ cook.first_name }} {{ cook.last_name }}</h6>
+                    <p class="mb-1 text-black"><strong>Years of Experience:</strong> {{ cook.year_of_experience }}</p>
+                    <p class="mb-1 text-black"><strong>Email:</strong> {{ cook.email }}</p>
+
+                    {% if cook.dishes.exists %}
+                      <p class="mb-1 text-black"><strong>Dishes:</strong></p>
+                      <ul class="text-black">
+                        {% for dish in cook.dishes.all %}
+                          <li>{{ dish.name }}{% if dish.description %} - {{ dish.description }}{% endif %}</li>
+                        {% endfor %}
+                      </ul>
+                    {% else %}
+                      <p class="text-black">This cook has no dishes assigned.</p>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2">
+              {% if cook == user or user.is_staff %}
+                <a href="{% url 'kitchen:cook-update' pk=cook.pk %}" class="btn btn-secondary">Edit</a>
+              {% endif %}
+              {% if user.is_staff and user != cook %}
+                <a href="{% url 'kitchen:cook-delete' pk=cook.id %}" class="btn btn-danger">Delete</a>
+              {% endif %}
+              <a href="{% url 'kitchen:cook-list' %}" class="btn btn-secondary">Back to Cooks List</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+{% endblock %}

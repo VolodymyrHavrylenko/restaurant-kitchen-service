@@ -1,0 +1,65 @@
+{% load static %}
+
+<footer class="footer pt-5 mt-5">
+  <div class="container">
+    <div class=" row">
+<div class="row justify-content-center text-center">
+
+  <div class="col-md-2 col-sm-6 col-6 mb-4">
+    <div>
+      <h6 class="text-sm">Company</h6>
+      <ul class="flex-column nav p-0 m-0">
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.linkedin.com/in/volodymyr-havrylenko-198949106">
+            About Us
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-md-2 col-sm-6 col-6 mb-4">
+    <div>
+      <h6 class="text-sm">Resources</h6>
+      <ul class="flex-column nav p-0 m-0">
+        <li class="nav-item">
+          <a class="nav-link" href="https://docs.python.org/">
+            Python
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="https://docs.djangoproject.com/">
+            Django
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="https://mate.academy/">
+            Mate academy
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+      <div class="col-12">
+        <div class="text-center my-4">
+          <p class="text-dark text-sm mb-2">
+            Created by
+            <a href="https://github.com/app-generator/django-material-kit/" class="font-weight-bold">Django Material
+              Kit</a>
+          </p>
+
+          {% if num_visits %}
+            <p class="text-dark text-sm mb-0">
+              You've visited our site {{ num_visits }} time{{ num_visits|pluralize }}.
+            </p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
