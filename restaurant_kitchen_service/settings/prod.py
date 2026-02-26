@@ -3,7 +3,7 @@ import os
 from restaurant_kitchen_service.settings.base import *
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
